@@ -10,8 +10,3 @@
   "arrowParens": "avoid",
   "proseWrap": "always"
 }
-{
-"singleQuote" : true,
-"semi": false,
-"tabWidth": 2
-}
