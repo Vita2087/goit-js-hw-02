@@ -1,3 +1,26 @@
+/*
+ * Задача 1. Замовлення дроїдів
+ * Оголоси функцію makeTransaction(quantity, pricePerDroid, customerCredits), 
+ * яка складає та повертає повідомлення про купівлю ремонтних дроїдів.
+* Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+* quantity — кількість замовлених дроїдів
+* pricePerDroid — ціна одного дроїда
+* customerCredits — сума коштів на рахунку клієнта
+
+* Доповни функцію таким чином:
+* Оголоси змінну для зберігання загальної суми замовлення 
+* (загальна вартість усіх замовлених дроїдів) і задай їй вираз розрахунку цієї суми.
+
+* Додай перевірку, чи зможе клієнт оплатити замовлення:
+* якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, 
+* функція має повертати рядок "Insufficient funds!"
+* в іншому випадку функція має повертати рядок 
+* "You ordered <quantity> droids worth <totalPrice> credits!", 
+*де <quantity> це кількість замовлених дроїдів, а <totalPrice> це їх загальна вартість.
+ */
+
+
 function makeTransaction(quantity, pricePerDroid, customerCredits) {
   const totalPrice = quantity * pricePerDroid;
   if (totalPrice > customerCredits) {
@@ -6,6 +29,9 @@ function makeTransaction(quantity, pricePerDroid, customerCredits) {
     return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
   }
 }
+
+// return totalPrice > customerCredits ? 'Insufficient funds!' : `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+// }
 
 console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
 console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
